@@ -21,6 +21,7 @@
 }
 .nav-bar ul img {
     height: 200px;
+    cursor: pointer;
 }
 .nav-items {
     display: flex;
