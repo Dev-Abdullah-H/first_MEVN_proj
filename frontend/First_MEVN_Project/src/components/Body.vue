@@ -112,7 +112,7 @@
 
 <style scoped>
 .container {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     margin-top: 2vw;
     width: 92vw;
     margin-left: 2.5vw;
@@ -120,7 +120,7 @@
 }
 
 .con-row {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     padding: 10px;
     display: flex;
     justify-content: center;
