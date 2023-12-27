@@ -12,9 +12,11 @@
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+</script>
 
 <style scoped>
+
 .nav-bar {
     background-color: #64c6cb;
     height: 20vh;
@@ -27,6 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
 }
 
 .nav-items li {
@@ -36,6 +39,17 @@
 .nav-items li a {
     text-decoration: none;
     color: white;
+    
+}
+
+/* Media Queries */
+@media screen and (max-width: 1000px) {
+    .nav-bar {
+        height: auto; /* Adjust height for smaller screens */
+    }
+    .nav-items li {
+        margin: 2vw; /* Adjust margin for smaller screens */
+    }
     
 }
 </style>

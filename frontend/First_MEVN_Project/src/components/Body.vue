@@ -107,23 +107,26 @@
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+</script>
 
 <style scoped>
 .container {
-    /* border: 2px solid black; */
+    border: 2px solid black;
     margin-top: 2vw;
     width: 92vw;
     margin-left: 2.5vw;
     padding: 20px;
 }
+
 .con-row {
-    /* border: 2px solid green; */
+    border: 2px solid green;
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .container h1 {
     padding: 5px 0;
     color: #4fbac0;
@@ -133,6 +136,7 @@
     margin: 1vw;
     text-decoration: underline;
 }
+
 .row-item {
     border: 1px solid #4fbac0;
     border-radius: 5px;
@@ -144,14 +148,41 @@
     flex-direction: column;
     cursor: pointer;
 }
+
 .row-item:hover {
     color: white;
     background-color: #4fbac0;
 }
-h3, p {
+
+h3,
+p {
     padding: 5px;
 }
+
 .row-item img {
-    height: 150px;  
+    height: 150px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1800px) {
+    .con-row {
+        height: 20vh;
+        overflow-x: auto;
+    }
+
+    .row-item {
+        height: 17vh;
+        width: 17vw;
+    }
+
+    .row-item img {
+        height: 14vh;
+        width: 14vw;
+    }
+
+    h3,
+    p {
+        font-size: 1.5vh;
+    }
 }
 </style>
