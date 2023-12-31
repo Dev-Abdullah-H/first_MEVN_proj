@@ -1,12 +1,45 @@
 const express = require('express')
 const router = express.Router()
 const Todo = require('../models/Todos')
-
+const mongoose = require('mongoose')
 // Get all routes
 
 router.get('/', async (req, res) => {
     const todos = await Todo.find()
     res.json(todos)
+})
+
+router.post('/new', async (req, res) => {
+    const newTodo = new Todo(
+        {
+            author : "Flanders",
+            todo : "Go to canada"
+        }
+
+    )
+    const savedTodo = await newTodo.save()
+    res.json(savedTodo)
+})
+// Getter by id
+router.get('/get/:id', async (req, res) => {
+    const t = await Todo.findById({_id : req.params.id })
+    res.json(t)
+})
+// Delete a todo 
+router.delete('/delete/:id', async (req, res) => {
+    const tDelete = await Todo.findByIdAndDelete({ _id : req.params.id })
+    res.json(tDelete)
+})
+// Update a todo
+router.put('/update/:id', async (req, res) => {
+    const tUpdate = await Todo.updateOne(
+        // {_id: req.params.id}
+        {
+            author : "b",
+            todo : "Go to Pak"
+        }
+    )
+    res.json(tUpdate)
 })
 
 module.exports = router

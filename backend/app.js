@@ -1,32 +1,32 @@
-// mongodb+srv://abdullah456:<password>@mevn.ftnxx2i.mongodb.net/?retryWrites=true&w=majority
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const uri = require("./pass");
 
-const express = require('express')
-const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
-const uri = require('./pass')
 // Create Express App
+const app = express();
 
-const app = express()
+// Database
+main().catch((err) => console.log(err));
+async function main() {
+  await mongoose.connect(uri);
+  console.log("Database is Successfully Connected");
+  listen()
+}
 
-// Database 
-
-mongoose.connect(uri)
-.then(() => {
-    console.log('MongoDB Connected');
-})
-.catch(err => console.log(err))
-
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 // Routes
-app.get('/', (res, req) => {
-    res.send('Home Page')
-})
+app.get("/", (res, req) => {
+  res.send("Home Page");
+});
 
 // const TodosRoute = require('./routes/Todos')
 // app.use('/todos', TodosRoute)
 
 // Start Server
-app.listen(3000, () => {
-    console.log("Listening");
-})
+function listen() {
+  app.listen(3000, () => {
+    console.log("Server is Listening on port 3000...");
+  });
+}
